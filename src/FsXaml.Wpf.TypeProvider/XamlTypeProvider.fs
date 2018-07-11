@@ -91,8 +91,8 @@ type public XamlTypeProvider(config : TypeProviderConfig) as this =
                                     match args with 
                                     | [this] ->
                                         let o = Expr.Coerce(this, typeof<obj>)
-                                        let isInit = Expr.FieldGet(this, initializedField)
-                                        let setInit = Expr.FieldSet(this, initializedField, Expr.Value(true))
+                                        let isInit = Expr.FieldGet(Expr.Coerce(this, initializedField.DeclaringType), initializedField)
+                                        let setInit = Expr.FieldSet(Expr.Coerce(this, initializedField.DeclaringType), initializedField, Expr.Value(true))
                                         <@@
                                             if (not (%%isInit : bool)) then
                                                 (%%setInit)                                            
