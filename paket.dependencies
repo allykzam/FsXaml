@@ -2,6 +2,7 @@ source https://www.nuget.org/api/v2/
 frameworks: >= net45
 
 nuget FSharp.Core redirects: force
+nuget NETStandard.Library.NETFramework 2.0.0-preview2-25405-01 preview
 nuget System.Windows.Interactivity.WPF 2.0.20525
 nuget FSharp.Desktop.UI 0.7.1
 nuget FSharp.ViewModule.Core 1.0.0.0
@@ -17,9 +18,10 @@ group Build
   nuget NuGet.CommandLine
 
   github fsharp/FAKE modules/Octokit/Octokit.fsx
-  github fsprojects/FSharp.TypeProviders.StarterPack src/ProvidedTypes.fsi
-  github fsprojects/FSharp.TypeProviders.StarterPack src/ProvidedTypes.fs
-  github fsprojects/FSharp.TypeProviders.StarterPack src/ProvidedTypesTesting.fs
+  github fsprojects/FSharp.TypeProviders.SDK src/ProvidedTypes.fsi
+  github fsprojects/FSharp.TypeProviders.SDK src/ProvidedTypes.fs
+  github fsprojects/FSharp.TypeProviders.SDK src/ProvidedTypesTesting.fs
+  github fsprojects/FSharp.TypeProviders.SDK netfx.props
 
 group Test
   source https://nuget.org/api/v2
